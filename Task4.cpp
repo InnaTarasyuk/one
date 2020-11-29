@@ -8,15 +8,6 @@
 using std::string;
 using std::vector;
 
-void threadFunction(vector<int> &team, int l, int r) {
-    for (int i = l; i < r - 1; i += 2) {
-        if (team[i] < team[i + 1]) {
-            team[i] = 0;
-        } else {
-            team[i + 1] = 0;
-        }
-    }
-}
 
 int input() {
     int n;
@@ -30,6 +21,16 @@ int input() {
         }
     } while (!test);
     return n;
+}
+
+void threadFunction(vector<int> &team, int l, int r) {
+    for (int i = l; i < r - 1; i += 2) {
+        if (team[i] < team[i + 1]) {
+            team[i] = 0;
+        } else {
+            team[i + 1] = 0;
+        }
+    }
 }
 
 int main() {
